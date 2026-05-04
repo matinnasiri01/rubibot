@@ -1,0 +1,61 @@
+{
+    "status": "OK",
+    "data": {
+        "updates": [
+            {
+                "type": "NewMessage",
+                "chat_id": "b0BsKEz04Zn0f75ab5d5402263a56d46",
+                "new_message": {
+                    "message_id": "1664722359804177308",
+                    "text": "/setch",
+                    "time": "1777204124",
+                    "is_edited": false,
+                    "sender_type": "User",
+                    "sender_id": "u0BsKEz0aa790e99fd589575d5e1d03c"
+                },
+                "update_time": 1777204124
+            },
+            {
+                "type": "NewMessage",
+                "chat_id": "b0BsKEz04Zn0f75ab5d5402263a56d46",
+                "new_message": {
+                    "message_id": "1664722359848177308",
+                    "text": "/start",
+                    "time": "1777204126",
+                    "is_edited": false,
+                    "sender_type": "User",
+                    "sender_id": "u0BsKEz0aa790e99fd589575d5e1d03c"
+                },
+                "update_time": 1777204126
+            },
+            {
+                "type": "NewMessage",
+                "chat_id": "b0BsKEz04Zn0f75ab5d5402263a56d46",
+                "new_message": {
+                    "message_id": "1664722359945177308",
+                    "text": "تست",
+                    "time": "1777204130",
+                    "is_edited": false,
+                    "sender_type": "User",
+                    "sender_id": "u0BsKEz0aa790e99fd589575d5e1d03c"
+                },
+                "update_time": 1777204130
+            },
+            {
+                "type": "NewMessage",
+                "chat_id": "b0BsKEz04Zn0f75ab5d5402263a56d46",
+                "new_message": {
+                    "message_id": "1664722360090177308",
+                    "text": "...",
+                    "reply_to_message_id": "1664722359945177308",
+                    "time": "1777204136",
+                    "is_edited": false,
+                    "sender_type": "User",
+                    "sender_id": "u0BsKEz0aa790e99fd589575d5e1d03c"
+                },
+                "update_time": 1777204136
+            }
+        ],
+        "next_offset_id": "69edfba8771225bcaa9d74a6"
+    }
+}

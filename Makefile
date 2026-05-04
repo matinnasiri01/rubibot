@@ -8,6 +8,8 @@ build:
 
 # Run the application
 run:
+	@echo "Runing..."
+
 	@go run main.go
 
 # Format
@@ -15,8 +17,7 @@ fmt:
 	@echo "Formating..."
 
 	@go fmt main.go
-	@go fmt rubika/*.go
-	@go fmt common/*.go
+	@go fmt rubibot/*.go
 
 
 	@echo "Done!"
@@ -46,4 +47,4 @@ watch:
 		Write-Output 'Watching...'; \
 	}"
 
-.PHONY: all build run test clean watch docker-run docker-down itest
+.PHONY: all build run fmt clean watch docker-run docker-down
