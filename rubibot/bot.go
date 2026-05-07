@@ -30,9 +30,10 @@ type Bot struct {
 }
 
 var (
-	cmdRx   = regexp.MustCompile(`^(/\w+)(@(\w+))?(\s|$)(.+)?`)
-	cbackRx = regexp.MustCompile(`^\f([-\w]+)(\|(.+))?$`)
+	cmdRx = regexp.MustCompile(`^(/\w+)(?:\s+(\S+))?`)
 )
+
+const OnText = "On-Text"
 
 func NewBot(pref Settings) (*Bot, error) {
 
@@ -80,7 +81,7 @@ func (b *Bot) Start() {
 	stopConfirm := make(chan struct{})
 
 	go func() {
-		b.Poller.Poll(b, b.Updates, stop)
+		b.Poller.Poll(b, stop)
 		close(stopConfirm)
 	}()
 
@@ -97,7 +98,9 @@ func (b *Bot) Start() {
 	}
 }
 
-func (b *Bot) Handle(endpoint interface{}, h HandlerFunc) {}
+func (b *Bot) Handle(endpoint string, h HandlerFunc) {
+	b.handlers[endpoint] = h
+}
 
 func (b *Bot) Raw(method string, payload interface{}) ([]byte, error) {
 	url := b.URL + b.Token + "/" + method
@@ -144,14 +147,12 @@ func (b *Bot) getUpdates(offset string) (Data, error) {
 		return emp, err
 	}
 
-	var resp struct {
-		Result Response
-	}
+	var resp Response
 	if err := json.Unmarshal(data, &resp); err != nil {
 		return emp, err
 	}
 
-	return resp.Result.Data, nil
+	return resp.Data, nil
 }
 
 func (b *Bot) sendText(to, text, mesId string) bool {

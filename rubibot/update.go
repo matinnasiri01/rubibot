@@ -8,23 +8,16 @@ func (b *Bot) ProcessContext(c Context) {
 	u := c.Update()
 	m := u.Message
 	if m.Text != "" {
-		if m.Text[0] == '\a' {
-			return
-		}
 
 		match := cmdRx.FindAllStringSubmatch(m.Text, -1)
 		if match != nil {
-			// Syntax: "</command>@<bot> <payload>"
 			command := match[0][1]
 			if b.handle(command, c) {
 				return
 			}
 		}
 
-		if b.handle(m.Text, c) {
-			return
-		}
-		b.handle("text", c)
+		b.handle(OnText, c)
 		return
 	}
 }
