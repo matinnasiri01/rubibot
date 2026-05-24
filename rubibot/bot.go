@@ -84,7 +84,7 @@ func (b *Bot) Start() {
 		b.Poller.Poll(b, stop)
 		close(stopConfirm)
 	}()
-
+	fmt.Println("Bot Successfully started!")
 	for {
 		select {
 		case upd := <-b.Updates:
