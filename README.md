@@ -1,10 +1,10 @@
-# 🎧 Rubibot
+# Rubibot
 
 A lightweight, fast, and type-safe Go client library for building bots on the **Rubika messaging platform** using the [official Bot API](https://rubika.ir/botapi).
 
----
+<br/>
 
-## Features
+### Features
 
 - 🚀 Long Polling support (`getUpdates`)
 - 🔄 Automatic offset management
@@ -13,15 +13,16 @@ A lightweight, fast, and type-safe Go client library for building bots on the **
 - 📦 Zero external dependencies
 - 🛠 Easy to extend and customize
 
----
+<br/>
 
-## 📦 Installation
+
+### 📦 Installation
 
 ```bash
 go get github.com/matinnasiri01/rubibot
 ```
 
-## ⚡ Quick Start
+### ⚡ Quick Start
 ```bash
 package main
 
@@ -61,7 +62,7 @@ func main() {
 }
 ```
 
-## ⚙ Configuration
+### ⚙ Configuration
 ```bash
 type Settings struct {
 	URL     string
@@ -72,7 +73,7 @@ type Settings struct {
 }
 ```
 
-## 🤖 Bot Structure
+### 🤖 Bot Structure
 ```bash
 type Bot struct {
 	URL      string
@@ -85,7 +86,7 @@ type Bot struct {
 }
 ```
 
-## 🔌 API Layer
+### 🔌 API Layer
 ```bash
 type API interface {
 	Reply(to, mes, what string) error
@@ -95,7 +96,7 @@ type API interface {
 }
 ```
 
-## 🎧 Spotify
+### 🎧 Spotify
 Vibe while building bots:
 👉 [open.spotify](https://open.spotify.com/track/12ciTjJXFmroanclpa7syE?si=rer9XwD4TYy9MCS9XV5PYw)
 
